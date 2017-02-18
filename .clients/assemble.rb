@@ -12,5 +12,9 @@ class Assemble
     def input
       JSON.parse(File.read(File.join(assemble_dir, "input.json")))
     end
+
+    def output(data)
+      File.write(File.join(assemble_dir, "output.json"), data.to_json)
+    end
   end
 end
